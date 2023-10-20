@@ -1,28 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
-import Logo from './assets/logo';
-export default function App() {
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Onboarding from './screens/FirstScreen/onboarding';
+
+const Stack = createStackNavigator();
+
+function App() {
   return (
-  <View style={styles.container}>
-    {/* <Image source={require('./assets/logo.png')} /> */}
-    <Logo />
-    <Text style={styles.text}> Next Phase</Text>
-    <StatusBar style="auto" />
-  </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Onboarding">
+        <Stack.Screen name="Onboarding" component={Onboarding} options={{ headerShown: false }} />
+        {/* Add other screens here */}
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'black',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color:'#fff',
-  },
-  text:{
-    color:'white',
-    fontSize:24,
-    fontFamily:'Roboto',
-  }
-});
+export default App;
