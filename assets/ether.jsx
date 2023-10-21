@@ -9,8 +9,8 @@ import Svg, {
 const SvgComponent = (props) => (
   <Svg
     xmlns="http://www.w3.org/2000/svg"
-    width={93}
-    height={441}
+    width={95}
+    height={420}
     fill="none"
     {...props}
   >
